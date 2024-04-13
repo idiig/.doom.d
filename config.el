@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
-;; (setq user-full-name "John Doe"
-;;       user-mail-address "john@doe.com")
+(setq user-full-name "idiig"
+      user-mail-address "avionplat@hotmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -40,7 +40,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/Dropbox/org-file/")
+;; (setq org-directory "~/Dropbox/org-file/")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -74,3 +74,16 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(defvar idiig-dir (file-name-directory load-file-name))
+(defvar idiig-core-dir (expand-file-name "core" idiig-dir))
+(defvar idiig-modules-dir (expand-file-name  "modules" idiig-dir))
+
+;; Cloud folder
+(defvar idiig-cloud-dir "~/Dropbox/")
+
+;; org file
+(defvar idiig-org-dir (expand-file-name "org-files" idiig-cloud-dir))
+
+(add-load-path! idiig-core-dir)     ;; (add-to-list 'load-path idiig-core-dir)
+(add-load-path! idiig-modules-dir)  ;; (add-to-list 'load-path idiig-modules-dir)
